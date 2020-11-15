@@ -1,5 +1,9 @@
-# Inner-Points
+# Inner-Points (2D)
 Generate inner points with higher densisty near boundaries
+
+
+![alt text](https://github.com/gaabnuneses/Inner-Points/blob/main/example.png?raw=true)
+
 
 ### Load packages
 ```julia
@@ -135,6 +139,7 @@ end
 
 ```
 
+## Fill this area
 4. Finally we can fill the enclosed space with
 
 ```julia
