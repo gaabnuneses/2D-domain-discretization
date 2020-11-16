@@ -21,7 +21,7 @@ function plotPi(P_int)
 end
 
 ## Plota triangularization
-function plotΔ(Dx,Dy,Vx,Vy,vor=false,del=true)
+function plotΔ(Dx,Dy,Vx,Vy,vor=true,del=true)
     if vor==true
         Vtrue = zeros(length(Vx))
         for i in 1:length(Vx)-1
