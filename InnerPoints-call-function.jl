@@ -1,8 +1,7 @@
-include("InnerPoints-functions.jl")
-include("InnerPoints-visualization.jl")
-
+## GEOMETRIA DO CONTORNO
+# Altere para modificar a geometria
 function dados()
-    np = 25
+    np = 10
     # Main nodes
     nos = [1 -1 -1
            2 1 -1
@@ -34,9 +33,30 @@ function dados()
     return np,nos,elem,radii
 end
 
-np,nos,elem,radii=dados()
-NOS,ELEM = createBoundary(np,nos,elem,radii)
-P_int = CreateInnerMinDist(NOS,ELEM,.75)
+## GERAÇÃO DE PONTOS INTERNOS ####
+include("InnerPoints-functions.jl")
 
+# Obtem dados
+np,nos,elem,radii=dados()
+
+# Cria contorno discretizado
+NOS,ELEM = createBoundary(np,nos,elem,radii)
+
+# Gera pontos internos com distribuição de densidade proporcional
+# à distância do contorno
+P_int = CreateInnerMinDist(NOS,ELEM,5)
+
+## VISUALIZAÇÃO ###
+include("InnerPoints-visualization.jl")
+
+# Plota o contorno
 plotNOSELEM(NOS,nos)
+
+# Plota os pontos internos
 plotPi(P_int)
+
+## GERAÇÃO DE MALHA TRIANGULAR ####
+include("Triangularization.jl")
+plot()
+Dx,Dy,Vx,Vy = triangularize(P_int,NOS)
+plotΔ(Dx,Dy,Vx,Vy,false,true)
