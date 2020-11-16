@@ -12,4 +12,4 @@ We're gonna create a geometry discretization procedure based on given boundary p
 ## Voronoi Triangularization
 We're gonna create a geometry discretization procedure based on given boundary points.
 
-![alt text](https://github.com/gaabnuneses/2D-domain-discretization/blob/main/Triang.png?raw=true)
+![alt text](https://github.com/gaabnuneses/2D-domain-discretization/blob/main/Triangle.png?raw=true)
