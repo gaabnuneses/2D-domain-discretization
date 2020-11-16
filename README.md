@@ -1,6 +1,6 @@
-# Inner-Points (2D)
-Generate inner points with higher densisty near boundaries
-
+# 2D-domain-discretization (2D)
+## Create boundary
+We're gonna create a geometry discretization procedure based on given boundary points.
 
 ![alt text](https://github.com/gaabnuneses/Inner-Points/blob/main/example.png?raw=true)
 
